@@ -85,10 +85,9 @@ def load_documents(uploaded_files) -> List[Document]:
 
 
 # -----------------------------
-# RAG Components
+# RAG Components (NO CACHING HERE)
 # -----------------------------
 
-@st.cache_resource
 def build_retriever(docs: List[Document]):
     splitter = RecursiveCharacterTextSplitter(
         chunk_size=800,
